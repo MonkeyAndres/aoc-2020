@@ -5,7 +5,13 @@ It's almost christmas and for this year's advent of code I decided to do use Typ
 ## Usage
 
 ```bash
-# Run all solutions (watch-mode)
+# Install dependencies
+yarn install
+
+# Run all solutions (watch-mode)
+yarn dev
+
+# Run all solutions
 yarn test
 
 # Run specific day's solution
