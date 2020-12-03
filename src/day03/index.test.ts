@@ -4,7 +4,7 @@ import { getDayInput } from "../utils";
 const input = getDayInput(3);
 
 describe("Day 3 - Part 1", () => {
-  const SLOPE_VECTOR: SlopeVector = [3, 1];
+  const slopeVector: SlopeVector = [3, 1];
 
   it("works with example input", () => {
     const exampleInput = [
@@ -21,11 +21,11 @@ describe("Day 3 - Part 1", () => {
       ".#..#...#.#",
     ];
 
-    expect(part1(exampleInput.join("\n"), SLOPE_VECTOR)).toEqual(7);
+    expect(part1(exampleInput.join("\n"), slopeVector)).toEqual(7);
   });
 
   it("works with final input", () => {
-    expect(part1(input, SLOPE_VECTOR)).toEqual(195);
+    expect(part1(input, slopeVector)).toEqual(195);
   });
 });
 
