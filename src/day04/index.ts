@@ -5,26 +5,30 @@ interface Passport {
   hcl: string;
   byr: string;
   iyr: string;
-  cid: string;
   hgt: string;
+  cid?: string;
 }
 
 type Predicate<T> = (value: T) => boolean;
 
-interface PassportPolicy {
-  byr: Predicate<string>;
-  iyr: Predicate<string>;
-  eyr: Predicate<string>;
-  hgt: Predicate<string>;
-  hcl: Predicate<string>;
-  ecl: Predicate<string>;
-  pid: Predicate<string>;
+type PassportPolicy = {
+  [K in keyof Passport]: Predicate<Passport[K]>;
+};
+
+enum EyeColors {
+  amb = "amb",
+  blu = "blu",
+  brn = "brn",
+  gry = "gry",
+  grn = "grn",
+  hzl = "hzl",
+  oth = "oth",
 }
 
 export const PASSPORT_RESTRICT_POLICY: PassportPolicy = {
-  byr: (value) => value.length === 4 && +value >= 1920 && +value <= 2002,
-  iyr: (value) => value.length === 4 && +value >= 2010 && +value <= 2020,
-  eyr: (value) => value.length === 4 && +value >= 2020 && +value <= 2030,
+  byr: (value) => parseInt(value, 10) >= 1920 && parseInt(value, 10) <= 2002,
+  iyr: (value) => parseInt(value, 10) >= 2010 && parseInt(value, 10) <= 2020,
+  eyr: (value) => parseInt(value, 10) >= 2020 && parseInt(value, 10) <= 2030,
   hgt: (value: string) => {
     if (value.endsWith("cm")) {
       return parseInt(value, 10) >= 150 && parseInt(value, 10) <= 193;
@@ -35,8 +39,7 @@ export const PASSPORT_RESTRICT_POLICY: PassportPolicy = {
     return false;
   },
   hcl: (value) => /^#[0-9a-f]{6}$/i.test(value),
-  ecl: (value) =>
-    ["amb", "blu", "brn", "gry", "grn", "hzl", "oth"].includes(value),
+  ecl: (value) => !!EyeColors[value as EyeColors],
   pid: (value) => /^[\d]{9}$/.test(value),
 };
 
@@ -51,7 +54,7 @@ export const part1 = (input: string): number => {
 
   return passports.filter((passport: Passport) =>
     Object.keys(PASSPORT_RESTRICT_POLICY).every(
-      (field: string) => passport[field as keyof Passport]
+      (field: string) => !!passport[field as keyof Passport]
     )
   ).length;
 };
@@ -60,15 +63,18 @@ export const part2 = (input: string): number => {
   const passports: Passport[] = input.split("\n\n").map(parsePassport);
 
   return passports.filter((passport: Passport) =>
-    Object.keys(PASSPORT_RESTRICT_POLICY).every((field) => {
-      const fieldValue = passport[field as keyof Passport];
-      const predicate = PASSPORT_RESTRICT_POLICY[field as keyof PassportPolicy];
-
-      if (fieldValue) {
-        return predicate(fieldValue);
+    Object.entries(PASSPORT_RESTRICT_POLICY).every(([field, predicate]) => {
+      if (predicate === undefined) {
+        return true;
       }
 
-      return false;
+      const fieldValue = passport[field as keyof Passport];
+
+      if (!fieldValue) {
+        return false;
+      }
+
+      return predicate(fieldValue);
     })
   ).length;
 };
