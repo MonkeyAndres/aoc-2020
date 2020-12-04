@@ -30,7 +30,7 @@ yarn test day01
 | [1 - Report Repair](src/day01/index.ts)       | ⭐️      | ⭐️      |
 | [2 - Password Philosophy](src/day02/index.ts) | ⭐️      | ⭐️      |
 | [3 - Toboggan Trajectory](src/day03/index.ts) | ⭐️      | ⭐️      |
-| 4 - TBA                                       |        |        |
+| [4 - Passport Processing](src/day04/index.ts) | ⭐️      | ⭐️      |
 | 5 - TBA                                       |        |        |
 | 6 - TBA                                       |        |        |
 | 7 - TBA                                       |        |        |
