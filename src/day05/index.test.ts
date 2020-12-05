@@ -5,7 +5,7 @@ const input = getDayInput(5);
 
 describe("Day 5 - Utils", () => {
   describe("decodeBoardingPass()", () => {
-    it("decodes some border passes", () => {
+    it("decodes some boarding passes", () => {
       expect(decodeBoardingPass("FBFBBFFRLR")).toEqual([44, 5]);
       expect(decodeBoardingPass("BFFFBBFRRR")).toEqual([70, 7]);
       expect(decodeBoardingPass("FFFBBBFRRR")).toEqual([14, 7]);

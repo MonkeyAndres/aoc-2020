@@ -95,7 +95,7 @@ export const part2 = (input: string): number => {
   const greaterSeatId = allSeatIds.reduce(findGreaterSeatId, -Infinity);
 
   for (
-    let seatPointer = PLANE_ROWS;
+    let seatPointer = PLANE_COLUMNS;
     seatPointer <= greaterSeatId;
     seatPointer++
   ) {
