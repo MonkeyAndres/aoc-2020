@@ -32,7 +32,7 @@ yarn test day01
 | [3 - Toboggan Trajectory](src/day03/index.ts) | ⭐️      | ⭐️      |
 | [4 - Passport Processing](src/day04/index.ts) | ⭐️      | ⭐️      |
 | [5 - Binary Boarding](src/day05/index.ts)     | ⭐️      | ⭐️      |
-| 6 - TBA                                       |        |        |
+| [6 - Custom Customs](src/day06/index.ts)      | ⭐️      | ⭐️      |
 | 7 - TBA                                       |        |        |
 | 8 - TBA                                       |        |        |
 | 9 - TBA                                       |        |        |
