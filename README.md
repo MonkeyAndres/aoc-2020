@@ -33,7 +33,7 @@ yarn test day01
 | [4 - Passport Processing](src/day04/index.ts) | ⭐️      | ⭐️      |
 | [5 - Binary Boarding](src/day05/index.ts)     | ⭐️      | ⭐️      |
 | [6 - Custom Customs](src/day06/index.ts)      | ⭐️      | ⭐️      |
-| 7 - TBA                                       |        |        |
+| [7 - Handy Haversacks](src/day07/index.ts)    | ⭐️      | ⭐️      |
 | 8 - TBA                                       |        |        |
 | 9 - TBA                                       |        |        |
 | 10 - TBA                                      |        |        |
