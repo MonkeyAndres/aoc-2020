@@ -34,7 +34,7 @@ yarn test day01
 | [5 - Binary Boarding](src/day05/index.ts)     | ⭐️      | ⭐️      |
 | [6 - Custom Customs](src/day06/index.ts)      | ⭐️      | ⭐️      |
 | [7 - Handy Haversacks](src/day07/index.ts)    | ⭐️      | ⭐️      |
-| 8 - TBA                                       |        |        |
+| [8 - Handheld Halting](src/day08/index.ts)    | ⭐️      | ⭐️      |
 | 9 - TBA                                       |        |        |
 | 10 - TBA                                      |        |        |
 | 11 - TBA                                      |        |        |
