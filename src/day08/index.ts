@@ -70,18 +70,18 @@ const getNextExecution = (
   instructions: Instruction[],
   latestChangedIndex: number
 ) => {
-  let _instructions: Instruction[] = instructions.map((a) => ({ ...a }));
+  let _instructions: Instruction[] = instructions.slice();
 
-  for (let i = latestChangedIndex + 1; i < _instructions.length; i++) {
+  for (let i = latestChangedIndex + 1; i <= _instructions.length; i++) {
     if (_instructions[i].code === InstructionCodes.nop) {
-      _instructions[i].code = InstructionCodes.jmp;
+      _instructions[i] = { ..._instructions[i], code: InstructionCodes.jmp };
 
       return {
         instructions: _instructions,
         latestChangedIndex: i,
       };
     } else if (_instructions[i].code === InstructionCodes.jmp) {
-      _instructions[i].code = InstructionCodes.nop;
+      _instructions[i] = { ..._instructions[i], code: InstructionCodes.nop };
 
       return {
         instructions: _instructions,
