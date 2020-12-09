@@ -12,7 +12,7 @@ export const part1 = (input: string, desiredNumber = DESIRED_SUM) => {
     }
   }
 
-  return new Error(`Cannot get ${DESIRED_SUM} by adding 2 expenses.`);
+  throw new Error(`Cannot get ${DESIRED_SUM} by adding 2 expenses.`);
 };
 
 export const part2 = (input: string) => {
@@ -30,5 +30,5 @@ export const part2 = (input: string) => {
     }
   }
 
-  return new Error(`Cannot get ${DESIRED_SUM} by adding 3 expenses.`);
+  throw new Error(`Cannot get ${DESIRED_SUM} by adding 3 expenses.`);
 };
