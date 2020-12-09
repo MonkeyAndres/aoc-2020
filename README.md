@@ -35,7 +35,7 @@ yarn test day01
 | [6 - Custom Customs](src/day06/index.ts)      | ⭐️      | ⭐️      |
 | [7 - Handy Haversacks](src/day07/index.ts)    | ⭐️      | ⭐️      |
 | [8 - Handheld Halting](src/day08/index.ts)    | ⭐️      | ⭐️      |
-| 9 - TBA                                       |        |        |
+| [9 - Encoding Error](src/day09/index.ts)      | ⭐️      | ⭐️      |
 | 10 - TBA                                      |        |        |
 | 11 - TBA                                      |        |        |
 | 12 - TBA                                      |        |        |
