@@ -36,7 +36,7 @@ yarn test day01
 | [7 - Handy Haversacks](src/day07/index.ts)    | ⭐️      | ⭐️      |
 | [8 - Handheld Halting](src/day08/index.ts)    | ⭐️      | ⭐️      |
 | [9 - Encoding Error](src/day09/index.ts)      | ⭐️      | ⭐️      |
-| 10 - TBA                                      |        |        |
+| [10 - Adapter Array](src/day10/index.ts)      | ⭐️      | ⭐️      |
 | 11 - TBA                                      |        |        |
 | 12 - TBA                                      |        |        |
 | 13 - TBA                                      |        |        |
