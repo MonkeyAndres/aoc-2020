@@ -37,7 +37,7 @@ yarn test day01
 | [8 - Handheld Halting](src/day08/index.ts)    | ⭐️      | ⭐️      |
 | [9 - Encoding Error](src/day09/index.ts)      | ⭐️      | ⭐️      |
 | [10 - Adapter Array](src/day10/index.ts)      | ⭐️      | ⭐️      |
-| 11 - TBA                                      |        |        |
+| [11 - Seating System](src/day11/index.ts)     | ⭐️      | ⭐️      |
 | 12 - TBA                                      |        |        |
 | 13 - TBA                                      |        |        |
 | 14 - TBA                                      |        |        |
