@@ -38,7 +38,7 @@ yarn test day01
 | [9 - Encoding Error](src/day09/index.ts)      | ⭐️      | ⭐️      |
 | [10 - Adapter Array](src/day10/index.ts)      | ⭐️      | ⭐️      |
 | [11 - Seating System](src/day11/index.ts)     | ⭐️      | ⭐️      |
-| 12 - TBA                                      |        |        |
+| [12 - Rain Risk](src/day12/index.ts)          | ⭐️      | ⭐️      |
 | 13 - TBA                                      |        |        |
 | 14 - TBA                                      |        |        |
 | 15 - TBA                                      |        |        |
