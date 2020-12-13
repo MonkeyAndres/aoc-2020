@@ -39,7 +39,7 @@ yarn test day01
 | [10 - Adapter Array](src/day10/index.ts)      | ⭐️      | ⭐️      |
 | [11 - Seating System](src/day11/index.ts)     | ⭐️      | ⭐️      |
 | [12 - Rain Risk](src/day12/index.ts)          | ⭐️      | ⭐️      |
-| 13 - TBA                                      |        |        |
+| [13 - Shuttle Search](src/day13/input.ts)     | ⭐️      | ⭐️      |
 | 14 - TBA                                      |        |        |
 | 15 - TBA                                      |        |        |
 | 16 - TBA                                      |        |        |
