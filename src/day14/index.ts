@@ -28,7 +28,7 @@ const parseInput = (input: string): FluxAction[] => {
 
     return {
       type: OperationTypes.WRITE_VALUE,
-      payload: { position, value: parseInt(value, 10) },
+      payload: { position: parseInt(position, 10), value: parseInt(value, 10) },
     };
   });
 };
@@ -78,3 +78,39 @@ const dockingDataReducer = (
 
 export const part1 = (input: string) =>
   createFerryDockingProgram(input, dockingDataReducer);
+
+const dockingDataReducerV2 = (
+  store: DockingStore,
+  { type, payload }: FluxAction
+) => {
+  if (type === OperationTypes.UPDATE_MASK) {
+    store.mask = payload.value;
+  } else if (type === OperationTypes.WRITE_VALUE) {
+    const bin = decimalToBin(payload.position);
+
+    let positions = [""];
+
+    for (let i = 0; i < store.mask.length; i++) {
+      const maskValue = store.mask[i];
+
+      if (maskValue === "0") {
+        positions = positions.map((position) => position + bin[i]);
+      } else if (maskValue === "1") {
+        positions = positions.map((position) => position + "1");
+      } else if (maskValue === "X") {
+        positions = positions.flatMap((position) => [
+          position + "0",
+          position + "1",
+        ]);
+      }
+    }
+
+    for (let position of positions) {
+      const decimalPosition = binToDecimal(position);
+      store.mem[decimalPosition] = payload.value;
+    }
+  }
+};
+
+export const part2 = (input: string) =>
+  createFerryDockingProgram(input, dockingDataReducerV2);
