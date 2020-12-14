@@ -40,7 +40,7 @@ yarn test day01
 | [11 - Seating System](src/day11/index.ts)     | ⭐️      | ⭐️      |
 | [12 - Rain Risk](src/day12/index.ts)          | ⭐️      | ⭐️      |
 | [13 - Shuttle Search](src/day13/input.ts)     | ⭐️      | ⭐️      |
-| 14 - TBA                                      |        |        |
+| [14 - Docking Data](src/day14/index.ts)       | ⭐️      |        |
 | 15 - TBA                                      |        |        |
 | 16 - TBA                                      |        |        |
 | 17 - TBA                                      |        |        |
