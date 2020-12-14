@@ -7,7 +7,7 @@ type FluxAction = { type: string; payload: { [k: string]: any } };
 
 type DockingStore = {
   mask: string;
-  mem: { [k: string]: string };
+  mem: { [k: string]: number };
 };
 
 const ASSIGNMENT_REGEXP = /^mem\[(\d+)\] = (\d+)$/;
@@ -37,44 +37,7 @@ const decimalToBin = (decimal: number) => decimal.toString(2).padStart(36, "0");
 
 const binToDecimal = (bin: string) => parseInt(bin, 2);
 
-const maskBinValue = (mask: string, bin: string) => {
-  let newValue = "";
-
-  for (let i = 0; i < mask.length; i++) {
-    const maskValue = mask[i];
-
-    if (maskValue !== "X") {
-      newValue += maskValue;
-    } else {
-      newValue += bin[i];
-    }
-  }
-
-  return newValue;
-};
-
-const dockingDataReducer = (
-  store: DockingStore,
-  { type, payload }: FluxAction
-): DockingStore => {
-  if (type === OperationTypes.UPDATE_MASK) {
-    return { ...store, mask: payload.value };
-  }
-
-  if (type === OperationTypes.WRITE_VALUE) {
-    const bin = decimalToBin(payload.value);
-    const newValue = maskBinValue(store.mask, bin);
-
-    return {
-      ...store,
-      mem: { ...store.mem, [payload.position]: binToDecimal(newValue) },
-    };
-  }
-
-  return store;
-};
-
-export const part1 = (input: string) => {
+const createFerryDockingProgram = (input: string, reducer: Function) => {
   const actions = parseInput(input);
 
   let store: DockingStore = {
@@ -83,11 +46,35 @@ export const part1 = (input: string) => {
   };
 
   for (let action of actions) {
-    store = dockingDataReducer(store, action);
+    reducer(store, action);
   }
 
-  return Object.values(store.mem).reduce(
-    (sum, value) => sum + parseInt(value, 10),
-    0
-  );
+  return Object.values(store.mem).reduce((sum, value) => sum + value, 0);
 };
+
+const dockingDataReducer = (
+  store: DockingStore,
+  { type, payload }: FluxAction
+) => {
+  if (type === OperationTypes.UPDATE_MASK) {
+    store.mask = payload.value;
+  } else if (type === OperationTypes.WRITE_VALUE) {
+    const bin = decimalToBin(payload.value);
+    let newValue = "";
+
+    for (let i = 0; i < store.mask.length; i++) {
+      const maskValue = store.mask[i];
+
+      if (maskValue !== "X") {
+        newValue += maskValue;
+      } else {
+        newValue += bin[i];
+      }
+    }
+
+    store.mem[payload.position] = binToDecimal(newValue);
+  }
+};
+
+export const part1 = (input: string) =>
+  createFerryDockingProgram(input, dockingDataReducer);
