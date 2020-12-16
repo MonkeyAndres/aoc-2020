@@ -1,7 +1,11 @@
-import { part1 } from ".";
+import { part1, part2 } from ".";
 import { getDayInput } from "../utils";
 
-const exampleInput = `class: 1-3 or 5-7
+const finalInput = getDayInput(16);
+
+describe("Day 16 - Part 1", () => {
+  it("works with example input", () => {
+    const exampleInput = `class: 1-3 or 5-7
 row: 6-11 or 33-44
 seat: 13-40 or 45-50
 
@@ -14,14 +18,32 @@ nearby tickets:
 55,2,20
 38,6,12`;
 
-const finalInput = getDayInput(16);
-
-describe("Day 16 - Part 1", () => {
-  it("works with example input", () => {
     expect(part1(exampleInput)).toEqual(71);
   });
 
   it("works with final input", () => {
     expect(part1(finalInput)).toEqual(27911);
+  });
+});
+
+describe("Day 16 - Part 2", () => {
+  it("works with example input", () => {
+    const exampleInput = `class: 0-1 or 4-19
+row: 0-5 or 8-19
+seat: 0-13 or 16-19
+
+your ticket:
+11,12,13
+
+nearby tickets:
+3,9,18
+15,1,5
+5,14,9`;
+
+    expect(part2(exampleInput)).toEqual(1716);
+  });
+
+  it("works with final input", () => {
+    expect(part2(finalInput)).toEqual(737176602479);
   });
 });

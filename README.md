@@ -42,7 +42,7 @@ yarn test day01
 | [13 - Shuttle Search](src/day13/input.ts)          | ⭐️      | ⭐️      |
 | [14 - Docking Data](src/day14/index.ts)            | ⭐️      | ⭐️      |
 | [15 - Rambunctious Recitation](src/day15/index.ts) | ⭐️      | ⭐️      |
-| 16 - TBA                                           |        |        |
+| [16 - Ticket Translation](src/day16/index.ts)      | ⭐️      | ⭐️      |
 | 17 - TBA                                           |        |        |
 | 18 - TBA                                           |        |        |
 | 19 - TBA                                           |        |        |
