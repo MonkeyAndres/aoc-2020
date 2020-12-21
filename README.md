@@ -44,7 +44,7 @@ yarn test day01
 | [15 - Rambunctious Recitation](src/day15/index.ts) | ⭐️      | ⭐️      |
 | [16 - Ticket Translation](src/day16/index.ts)      | ⭐️      | ⭐️      |
 | 17 - TBA                                           |        |        |
-| 18 - TBA                                           |        |        |
+| [18 - Operation Order](src/day18/index.ts)         | ⭐️      |        |
 | 19 - TBA                                           |        |        |
 | 20 - TBA                                           |        |        |
 | 21 - TBA                                           |        |        |
