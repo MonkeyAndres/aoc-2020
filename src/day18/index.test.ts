@@ -43,6 +43,6 @@ describe("Day 18 - Utils", () => {
 
 describe("Day 18 - Part 1", () => {
   it("works with final input", () => {
-    expect(part1(finalInput)).toEqual(0);
+    expect(part1(finalInput)).toEqual(8929569623593);
   });
 });
