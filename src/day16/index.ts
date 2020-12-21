@@ -80,9 +80,6 @@ export const part2 = (input: string) => {
     (ticket) => !ticket.some((n) => !isInRanges(n, flatPredicates))
   );
 
-  // Include ticket before validations
-  nearbyTickets.push(myTicket);
-
   // Validate which rows meet each predicate
   const transposedTickets: number[][] = transpose(nearbyTickets);
   const predicateToValidRows: { [k: number]: string[] } = {};
@@ -124,7 +121,7 @@ export const part2 = (input: string) => {
       return acc;
     }, {} as { [k: number]: number });
 
-  // Accumulate the
+  // Accumulate the result (only for first six predicates)
   let result = 1;
 
   for (let i = 0; i < 6; i++) {
