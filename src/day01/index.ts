@@ -15,6 +15,12 @@ export const part1 = (input: string, desiredNumber = DESIRED_SUM) => {
   throw new Error(`Cannot get ${DESIRED_SUM} by adding 2 expenses.`);
 };
 
+const ignoreThrow = <T extends Function>(fn: T) => {
+  try {
+    return fn()
+  } catch (error) {}
+}
+
 export const part2 = (input: string) => {
   const expenses = input.split("\n").map(Number);
 
@@ -22,7 +28,7 @@ export const part2 = (input: string) => {
     const targetValue = DESIRED_SUM - expenses[i];
 
     for (let j = 0; j <= expenses.length - 1; j++) {
-      const res = part1(input, targetValue);
+      const res = ignoreThrow(() => part1(input, targetValue));
 
       if (typeof res === "number") {
         return res * expenses[i];
